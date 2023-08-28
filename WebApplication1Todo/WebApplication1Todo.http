@@ -1,0 +1,41 @@
+﻿# @WebApplication1Todo_HostAddress = https://localhost:7034
+@WebApplication1Todo_HostAddress = https://localhost:32781
+@id = 1
+
+GET {{WebApplication1Todo_HostAddress}}/todoitems
+
+###
+
+POST {{WebApplication1Todo_HostAddress}}/todoitems
+Content-Type: application/json
+
+{
+  "name":"walk dog",
+  "isComplete":true,
+  "secret":"sadfasdfasdf"
+}
+
+###
+
+GET {{WebApplication1Todo_HostAddress}}/todoitems/complete
+
+###
+
+GET {{WebApplication1Todo_HostAddress}}/todoitems/{{id}}
+
+###
+
+PUT {{WebApplication1Todo_HostAddress}}/todoitems/{{id}}
+Content-Type: application/json
+
+{
+  "id": {{id}},
+  "name":"feed the fish",
+  "isComplete":false
+}
+
+###
+
+DELETE {{WebApplication1Todo_HostAddress}}/todoitems/{{id}}
+
+###
